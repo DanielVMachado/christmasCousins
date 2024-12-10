@@ -2,21 +2,20 @@ document.getElementById('startButton').addEventListener('click', function() {
     document.getElementById('welcome-section').classList.add('hidden');
     document.getElementById('quiz').classList.remove('hidden');
     
-    // Rolar suavemente para o topo das perguntas
     document.getElementById('quiz').scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
     });
 });
 
-// Objeto com as respostas corretas
+
 const correctAnswers = {
-    1: "cousins", // Nome do grupo WhatsApp
-    2: "756", // Soma dos números das portas
-    3: "10", // Dias para o banho
-    4: "45", // Número de ripas
-    5: "312211", // Resposta da sequência
-    6: "84" // Valor da palavra LILIANA
+    1: "cousins",
+    2: "756",
+    3: "10", 
+    4: "45", 
+    5: "312211",
+    6: "84"
 };
 
 document.querySelectorAll('.question-form').forEach(form => {
@@ -83,7 +82,7 @@ document.querySelectorAll('.question-form').forEach(form => {
                     hintMessage.className = 'hint-message';
                     hintMessage.innerHTML = `
                         <p>💡 Dica:</p>
-                        <p>Não te esqueças que o "K" também é uma letra!</p>
+                        <p>Não se esqueçam que o "K" também é uma letra!</p>
                         <p>Cada letra vale o seu número de posição × 2</p>
                     `;
                     this.appendChild(hintMessage);
@@ -184,7 +183,7 @@ document.getElementById('codeForm').addEventListener('submit', function(e) {
         celebrateSuccess();
     } else {
         const errorDiv = document.getElementById('codeErrorMessage');
-        errorDiv.textContent = "Já bebeste demais? 🍷 O código não está correto!";
+        errorDiv.textContent = "Já beberam demais? 🍷 O código não está correto!";
         errorDiv.classList.remove('hidden');
         
         setTimeout(() => {
