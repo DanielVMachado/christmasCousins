@@ -1,6 +1,12 @@
 document.getElementById('startButton').addEventListener('click', function() {
     document.getElementById('welcome-section').classList.add('hidden');
     document.getElementById('quiz').classList.remove('hidden');
+    
+    // Rolar suavemente para o topo das perguntas
+    document.getElementById('quiz').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+    });
 });
 
 // Objeto com as respostas corretas
