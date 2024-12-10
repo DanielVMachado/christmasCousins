@@ -8,10 +8,24 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* Cores base do Natal */
+    --christmas-red: rgba(176, 32, 24, 0.9);
+    --christmas-red-light: rgba(176, 32, 24, 0.1);
+    --christmas-red-medium: rgba(176, 32, 24, 0.5);
+    --christmas-green: rgba(34, 111, 84, 0.9);
+    --christmas-green-light: rgba(34, 111, 84, 0.1);
+    --christmas-green-medium: rgba(34, 111, 84, 0.5);
+    --christmas-gold: rgba(212, 175, 55, 0.9);
+    --christmas-gold-light: rgba(212, 175, 55, 0.1);
+    --snow-white: #fff;
+    --text-dark: #2c3e50;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #f0f8ff 0%, #e3f2fd 100%);
-    color: #2c3e50;
+    background: linear-gradient(135deg, var(--christmas-red-light) 0%, var(--christmas-green-light) 100%);
+    color: var(--text-dark);
     text-align: center;
     padding: 20px;
     line-height: 1.6;
@@ -21,7 +35,7 @@ body {
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
@@ -29,7 +43,7 @@ body {
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5em;
-    color: #c0392b;
+    color: var(--christmas-red);
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -37,14 +51,14 @@ h1 {
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.8em;
-    color: #34495e;
+    color: var(--christmas-green);
     margin: 25px 0;
 }
 
 .special-message {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    color: #2c3e50;
+    color: var(--text-dark);
     margin: 20px 0;
     font-size: 1.3em;
     line-height: 1.4;
@@ -52,17 +66,17 @@ h2 {
 
 .date-message {
     font-weight: 600;
-    color: #e74c3c;
+    color: var(--christmas-red);
     margin-bottom: 25px;
     font-size: 1.1em;
     padding: 10px;
-    background-color: rgba(231, 76, 60, 0.1);
+    background-color: var(--christmas-red-light);
     border-radius: 8px;
     display: inline-block;
 }
 
 button {
-    background: linear-gradient(145deg, #4CAF50, #45a049);
+    background: linear-gradient(145deg, var(--christmas-green), var(--christmas-green-medium));
     color: white;
     padding: 12px 25px;
     border: none;
@@ -78,7 +92,7 @@ button {
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(145deg, #45a049, #4CAF50);
+    background: linear-gradient(145deg, var(--christmas-green-medium), var(--christmas-green));
 }
 
 .question {
@@ -337,7 +351,7 @@ input[type="text"]:focus, input[type="number"]:focus {
 }
 
 .back-button {
-    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    background: linear-gradient(145deg, var(--christmas-red), var(--christmas-red-medium));
     position: absolute;
     left: 20px;
     top: 20px;
@@ -345,7 +359,8 @@ input[type="text"]:focus, input[type="number"]:focus {
 }
 
 .code-button {
-    background: linear-gradient(145deg, #3498db, #2980b9);
+    background: linear-gradient(145deg, var(--christmas-gold), var(--christmas-gold-light));
+    color: var(--text-dark);
 }
 
 .code-inputs {
@@ -438,10 +453,33 @@ input[type="text"]:focus, input[type="number"]:focus {
 }
 
 .question-block {
-    background-color: #fff;
+    background-color: var(--snow-white);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    border: 1px solid var(--christmas-red-light);
+}
+
+.question-block.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.question-block:not(.hidden) {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .question-form button {
@@ -450,26 +488,26 @@ input[type="text"]:focus, input[type="number"]:focus {
 }
 
 .digit-reveal {
-    background-color: #e8f5e9;
+    background-color: var(--christmas-green-light);
     padding: 15px;
     border-radius: 8px;
     margin-top: 15px;
     text-align: center;
-    color: #2e7d32;
+    color: var(--christmas-green);
     font-weight: 600;
 }
 
 .digit-reveal .digit {
     font-size: 1.4em;
-    color: #1b5e20;
+    color: var(--christmas-green);
     padding: 5px 10px;
-    background-color: #c8e6c9;
+    background-color: var(--snow-white);
     border-radius: 5px;
     margin: 0 5px;
 }
 
 .question-block.answered {
-    border: 2px solid #4CAF50;
+    border: 2px solid var(--christmas-green);
 }
 
 .question-block.answered input,
@@ -478,12 +516,12 @@ input[type="text"]:focus, input[type="number"]:focus {
 }
 
 .error-reveal {
-    background-color: #ffebee;
+    background-color: var(--christmas-red-light);
     padding: 15px;
     border-radius: 8px;
     margin-top: 15px;
     text-align: center;
-    color: #c62828;
+    color: var(--christmas-red);
     font-weight: 600;
     animation: fadeIn 0.3s ease-in;
 }
@@ -515,7 +553,7 @@ input[type="text"]:focus, input[type="number"]:focus {
     font-size: 1.2em;
     margin: 10px 0;
     padding: 10px;
-    background-color: #f8f9fa;
+    background-color: var(--christmas-green-light);
     border-radius: 5px;
     color: #2c3e50;
 }
@@ -535,15 +573,15 @@ input[type="text"]:focus, input[type="number"]:focus {
 }
 
 .hint-message {
-    background-color: #fff8e1;
+    background-color: var(--christmas-gold-light);
     padding: 15px;
     border-radius: 8px;
     margin-top: 15px;
     text-align: center;
-    color: #f57f17;
+    color: var(--text-dark);
     font-weight: 600;
     animation: fadeIn 0.3s ease-in;
-    border-left: 4px solid #ffd54f;
+    border-left: 4px solid var(--christmas-gold);
 }
 
 .hint-message p {
@@ -551,36 +589,29 @@ input[type="text"]:focus, input[type="number"]:focus {
 }
 
 .hint-message p:first-child {
-    color: #f57f17;
+    color: var(--christmas-gold);
     font-size: 1.1em;
 }
 
 .fun-fact {
     margin-top: 10px;
     font-size: 0.9em;
-    color: #e67e22;
+    color: var(--christmas-red);
     font-style: italic;
-    background-color: #fff3e0;
+    background-color: var(--christmas-red-light);
     padding: 8px;
     border-radius: 5px;
 }
 
-.map-link {
-    color: #e74c3c;
-    text-decoration: none;
-    padding: 8px 15px;
-    background-color: #fff3f3;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+.coordinates {
     display: inline-block;
+    color: var(--christmas-red);
+    padding: 8px 15px;
+    background-color: var(--christmas-red-light);
+    border-radius: 20px;
+    font-family: monospace;
+    font-size: 1.2em;
     margin-top: 10px;
-}
-
-.map-link:hover {
-    background-color: #e74c3c;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .enigma-verse {
@@ -598,4 +629,71 @@ html {
 
 #quiz {
     scroll-margin-top: 20px;
+}
+
+/* Adicionar estilos para perguntas desabilitadas */
+.disabled-question {
+    opacity: 0.7;
+    position: relative;
+}
+
+.disabled-question::before {
+    content: "🔒 Responda a pergunta anterior primeiro!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(176, 32, 24, 0.8);
+    color: var(--snow-white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.disabled-question:hover::before {
+    opacity: 1;
+}
+
+.disabled-question input,
+.disabled-question button {
+    cursor: not-allowed;
+}
+
+/* Adicionar estilos para a introdução do quiz */
+.quiz-intro {
+    background-color: var(--christmas-green-light);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 4px solid var(--christmas-green);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-intro p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .quiz-intro {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .quiz-intro p {
+        font-size: 1em;
+    }
+}
+
+/* Adicionar estilo para o botão no final das perguntas */
+.final-code-button {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--christmas-red-light);
 }

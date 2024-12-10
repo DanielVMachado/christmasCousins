@@ -19,20 +19,20 @@
             <div class="game-instructions">
                 <h2>Bem-vindos ao Desafio da Lili! 🎁🔐</h2>
                 
-                <p class="intro-text">Para que a Lili possa finalmente abrir o seu presente, todos os primos precisarão de juntar forças e resolver este jogo. Trabalhando em equipa é mais divertido!</p>
+                <p class="intro-text">Para que a Lili possa finalmente abrir o seu presente, todos os primos precisarão de juntar forças e resolver este desafio. Trabalhar em equipa é mais divertido!</p>
                 
                 <div class="how-it-works">
                     <h3>Como funciona?</h3>
-                    <p>O jogo é composto por várias adivinhas.</p>
-                    <p>Cada adivinha correta irá revelar um dígito do código do enigma final.</p>
+                    <p>O jogo é composto por várias perguntas.</p>
+                    <p>Cada resposta correta irá revelar um dígito do código do enigma final.</p>
                     
                     <ul class="steps-list">
-                        <li>Adivinha 1: Dá o 1º dígito do código.</li>
-                        <li>Adivinha 2: Dá o 2º dígito do código.</li>
+                        <li>Pergunta 1: Dá o 1º dígito do código.</li>
+                        <li>Pergunta 2: Dá o 2º dígito do código.</li>
                         <li>E assim por diante!</li>
                     </ul>
                     
-                    <p>Assim que todas as adivinhas forem resolvidas e o código do enigma estiver completo, insire-o no local indicado.</p>
+                    <p>Assim que todas as perguntas forem respondidas corretamente e o código do enigma estiver completo, insire-o clicando no botão "Inserir Código Final".</p>
                 </div>
                 
                 <p class="final-step"><strong>O Enigma Final será revelado!</strong><br>
@@ -41,15 +41,19 @@
                 <p class="good-luck">Boa sorte, primos! Está nas vossas mãos (e nas cabeças) garantir que a Lili recebe o que é dela por direito! 🕵️‍♂️🔑</p>
             </div>
             <div class="button-group">
-                <button id="startButton">Começar o Jogo</button>
+                <button id="startButton">Começar o Desafio</button>
                 <button id="codeButton" class="code-button">Inserir Código Final</button>
             </div>
         </div>
         
         <div id="quiz" class="hidden">
-            <h2>Teste dos Primos! 🎮</h2>
+            <h2>Quiz de Primos! 🎮</h2>
             <button id="backButton" class="back-button">← Voltar</button>
             <div id="errorMessage" class="error-message hidden"></div>
+            
+            <div class="quiz-intro">
+                <p>Já juntaste os primos? Terás de responder às 6 questões acertadamente para desbloquear o enigma final. Depois, aponta o código e insere-o no botão de "Inserir Código Final" no final da página. 🎯</p>
+            </div>
             
             <div class="questions-container">
                 <div class="question-block">
@@ -156,12 +160,16 @@
                     </form>
                 </div>
             </div>
+
+            <div class="button-group final-code-button">
+                <button id="codeButtonQuiz" class="code-button">Inserir Código Final</button>
+            </div>
         </div>
 
         <div id="enigma" class="hidden">
             <button id="backFromEnigmaButton" class="back-button">← Voltar</button>
             <h2>🎉 Parabéns! Último Desafio!</h2>
-            <p class="success-message">Uau! Acertaste todas as perguntas! Agora só falta um último passo para descobrires o teu presente...</p>
+            <p class="success-message">Acertaram todas as perguntas! Agora só falta um último passo para a Lili abrir o presente...</p>
             <div class="enigma-content">
                 <h3>🔍 Enigma Final:</h3>
                 <p class="enigma-verse">
@@ -176,9 +184,7 @@
                     Na casa ao lado, a chave vai brilhar!
                 </p>
                 <p class="enigma-hint">
-                    <a href="https://maps.app.goo.gl/pz5RddA3MVdz24XB7" target="_blank" class="map-link">
-                        Clica aqui se quiseres uma dica! 📍
-                    </a>
+                    <span class="coordinates">51.507115, -0.563276</span>
                 </p>
             </div>
         </div>

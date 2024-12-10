@@ -1,6 +1,7 @@
 document.getElementById('startButton').addEventListener('click', function() {
     document.getElementById('welcome-section').classList.add('hidden');
     document.getElementById('quiz').classList.remove('hidden');
+    updateQuestionsState();
     
     document.getElementById('quiz').scrollIntoView({ 
         behavior: 'smooth',
@@ -18,6 +19,33 @@ const correctAnswers = {
     6: "84"
 };
 
+function updateQuestionsState() {
+    const questionBlocks = document.querySelectorAll('.question-block');
+    
+    questionBlocks.forEach((block, index) => {
+        const form = block.querySelector('form');
+        const input = form.querySelector('input');
+        const button = form.querySelector('button');
+        
+        if (index === 0) {
+            input.disabled = false;
+            button.disabled = false;
+        } else {
+            const previousBlock = questionBlocks[index - 1];
+            const isPreviousAnswered = previousBlock.classList.contains('answered');
+            
+            input.disabled = !isPreviousAnswered;
+            button.disabled = !isPreviousAnswered;
+            
+            if (!isPreviousAnswered) {
+                block.classList.add('disabled-question');
+            } else {
+                block.classList.remove('disabled-question');
+            }
+        }
+    });
+}
+
 document.querySelectorAll('.question-form').forEach(form => {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -25,6 +53,9 @@ document.querySelectorAll('.question-form').forEach(form => {
         const input = this.querySelector('input');
         let answer = input.value.toLowerCase().trim();
         let correctAnswer = correctAnswers[questionNumber].toLowerCase();
+        
+        const previousMessages = this.querySelectorAll('.error-reveal, .hint-message');
+        previousMessages.forEach(msg => msg.remove());
         
         if (questionNumber === "5" || questionNumber === "6") {
             answer = input.value;
@@ -37,64 +68,55 @@ document.querySelectorAll('.question-form').forEach(form => {
             this.querySelector('button').disabled = true;
             this.closest('.question-block').classList.add('answered');
             celebrateSuccess(300);
+            updateQuestionsState();
         } else {
-            const errorDiv = this.querySelector('.error-reveal');
-            if (!errorDiv) {
-                const errorMessage = document.createElement('div');
-                errorMessage.className = 'error-reveal';
-                
-                if (questionNumber === "3") {
-                    const hintMessage = document.createElement('div');
-                    hintMessage.className = 'hint-message';
-                    hintMessage.innerHTML = `
-                        <p>💡 Dica:</p>
-                        <p>Não é só nas épocas festivas que ela toma banho? 🤔🚿😅</p>
-                    `;
-                    this.appendChild(hintMessage);
-                    
-                    setTimeout(() => {
-                        hintMessage.remove();
-                    }, 6000);
-                }
-
-                if (questionNumber === "4") {
-                    const hintMessage = document.createElement('div');
-                    hintMessage.className = 'hint-message';
-                    hintMessage.innerHTML = `
-                        <p>💡 Dica:</p>
-                        <p>Também têm de contar, não sou só eu a fazer o jogo! 🔢</p>
-                    `;
-                    this.appendChild(hintMessage);
-                    
-                    setTimeout(() => {
-                        hintMessage.remove();
-                    }, 6000);
-                }
-
-                errorMessage.innerHTML = `
-                    <p>❌ A sério? Bebam mais um copo e tentem novamente!</p>
-                    <p class="error-hint">Vocês conseguem! 💪</p>
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'error-reveal';
+            errorMessage.innerHTML = `
+                <p>❌ Nah... Está errado! Bebam mais um copo e tentem novamente!</p>
+                <p class="error-hint">Vocês conseguem! 💪</p>
+            `;
+            this.appendChild(errorMessage);
+            
+            if (questionNumber === "1") {
+                const hintMessage = document.createElement('div');
+                hintMessage.className = 'hint-message';
+                hintMessage.innerHTML = `
+                    <p>💡 Dica:</p>
+                    <p>Não introduzas o emoji, apenas a palavra! 📝</p>
                 `;
-                this.appendChild(errorMessage);
-                
-                if (questionNumber === "6") {
-                    const hintMessage = document.createElement('div');
-                    hintMessage.className = 'hint-message';
-                    hintMessage.innerHTML = `
-                        <p>💡 Dica:</p>
-                        <p>Não se esqueçam que o "K" também é uma letra!</p>
-                        <p>Cada letra vale o seu número de posição × 2</p>
-                    `;
-                    this.appendChild(hintMessage);
-                    
-                    setTimeout(() => {
-                        hintMessage.remove();
-                    }, 6000);
-                }
+                this.appendChild(hintMessage);
+            }
 
-                setTimeout(() => {
-                    errorMessage.remove();
-                }, 6000);
+            if (questionNumber === "3") {
+                const hintMessage = document.createElement('div');
+                hintMessage.className = 'hint-message';
+                hintMessage.innerHTML = `
+                    <p>💡 Dica:</p>
+                    <p>Não é só nas épocas festivas que ela toma banho? 🤔🚿😅</p>
+                `;
+                this.appendChild(hintMessage);
+            }
+
+            if (questionNumber === "5") {
+                const hintMessage = document.createElement('div');
+                hintMessage.className = 'hint-message';
+                hintMessage.innerHTML = `
+                    <p>💡 Dica:</p>
+                    <p>Esta é das perguntas mais difíceis, mas aposto que ao ler o último conjunto da sequência já disseste a resposta! 🤔💭</p>
+                `;
+                this.appendChild(hintMessage);
+            }
+
+            if (questionNumber === "6") {
+                const hintMessage = document.createElement('div');
+                hintMessage.className = 'hint-message';
+                hintMessage.innerHTML = `
+                    <p>💡 Dica:</p>
+                    <p>Não se esqueçam que o "K" também é uma letra!</p>
+                    <p>Cada letra vale o seu número de posição × 2</p>
+                `;
+                this.appendChild(hintMessage);
             }
         }
     });
@@ -195,4 +217,13 @@ document.getElementById('codeForm').addEventListener('submit', function(e) {
 document.getElementById('backFromEnigmaButton').addEventListener('click', function() {
     document.getElementById('enigma').classList.add('hidden');
     document.getElementById('welcome-section').classList.remove('hidden');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateQuestionsState();
+});
+
+document.getElementById('codeButtonQuiz').addEventListener('click', function() {
+    document.getElementById('quiz').classList.add('hidden');
+    document.getElementById('code-section').classList.remove('hidden');
 });
