@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa de Natal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-section">
+            <h1>🎄 Feliz Natal! 🎁</h1>
+            <p class="special-message">Que este Natal seja tão especial quanto os momentos que passamos juntos!</p>
+            <p class="date-message">Almoço de primos: Domingo, 15 de Dezembro de 2024</p>
+            <div class="christmas-image">
+                <img src="img/primos.JPG" alt="Feliz Natal" id="christmasImg">
+            </div>
+            <div class="game-instructions">
+                <h2>Bem-vindos ao Desafio da Lili! 🎁🔐</h2>
+                
+                <p class="intro-text">Para que a Lili possa finalmente abrir o seu presente, todos os primos precisarão de juntar forças e resolver este jogo. Trabalhando em equipa é mais divertido!</p>
+                
+                <div class="how-it-works">
+                    <h3>Como funciona?</h3>
+                    <p>O jogo é composto por várias adivinhas.</p>
+                    <p>Cada adivinha correta irá revelar um dígito do código do enigma final.</p>
+                    
+                    <ul class="steps-list">
+                        <li>Adivinha 1: Dá o 1º dígito do código.</li>
+                        <li>Adivinha 2: Dá o 2º dígito do código.</li>
+                        <li>E assim por diante!</li>
+                    </ul>
+                    
+                    <p>Assim que todas as adivinhas forem resolvidas e o código do enigma estiver completo, insire-o no local indicado.</p>
+                </div>
+                
+                <p class="final-step"><strong>O Enigma Final será revelado!</strong><br>
+                Agora, basta pensar, explorar e descobrir onde está escondida a chave que abre o cadeado do presente.</p>
+                
+                <p class="good-luck">Boa sorte, primos! Está nas vossas mãos (e nas cabeças) garantir que a Lili recebe o que é dela por direito! 🕵️‍♂️🔑</p>
+            </div>
+            <div class="button-group">
+                <button id="startButton">Começar o Jogo</button>
+                <button id="codeButton" class="code-button">Inserir Código Final</button>
+            </div>
+        </div>
+        
+        <div id="quiz" class="hidden">
+            <h2>Teste dos Primos! 🎮</h2>
+            <button id="backButton" class="back-button">← Voltar</button>
+            <div id="errorMessage" class="error-message hidden"></div>
+            
+            <div class="questions-container">
+                <div class="question-block">
+                    <form class="question-form" data-digit="1">
+                        <div class="question">
+                            <label>1. Qual é o nome do nosso grupo de primos no WhatsApp?</label>
+                            <input type="text" required>
+                        </div>
+                        <button type="submit">Verificar</button>
+                        <div class="digit-reveal hidden">
+                            <p>🎉 Correto! O primeiro dígito do código é: <span class="digit">5</span></p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question-block">
+                    <form class="question-form" data-digit="2">
+                        <div class="question">
+                            <label>2. Qual é o resultado do número de porta de casa do almoço deste ano mais o numero de porta de casa do almoço do ano passado?</label>
+                            <input type="number" required min="0">
+                        </div>
+                        <button type="submit">Verificar</button>
+                        <div class="digit-reveal hidden">
+                            <p>🎉 Correto! O segundo dígito do código é: <span class="digit">2</span></p>
+                            <p class="fun-fact">😱 Curiosidade: Sabiam que também é o número de namorados da Tânia Carolina?</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question-block">
+                    <form class="question-form" data-digit="3">
+                        <div class="question">
+                            <label>3. Quantos dias faltam para a Tânia Carolina tomar banho?</label>
+                            <input type="number" required min="0">
+                        </div>
+                        <button type="submit">Verificar</button>
+                        <div class="digit-reveal hidden">
+                            <p>🎉 Correto! O terceiro dígito do código é: <span class="digit">8</span></p>
+                            <p class="fun-fact">😂 Era a brincar, sabemos que é só mesmo na Páscoa! 🐰🚿</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question-block">
+                    <form class="question-form" data-digit="4">
+                        <div class="question">
+                            <label>4. Quantas ripas de madeira tem a entrada de casa do Pedro e da Sónia desde o teto ao chão da entrada?</label>
+                            <input type="number" required min="0">
+                        </div>
+                        <button type="submit">Verificar</button>
+                        <div class="digit-reveal hidden">
+                            <p>🎉 Correto! O quarto dígito do código é: <span class="digit">4</span></p>
+                            <p class="fun-fact">⚽ Sabiam que 45 também é a quantidade de golos que o João Miguel marcou em duas épocas de futebol? Nunca cresceu porque foram na própria baliza! 😂🤣</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question-block">
+                    <form class="question-form" data-digit="5">
+                        <div class="question">
+                            <label>5. A sequência abaixo segue um padrão escondido. Qual é o próximo número?<br>
+                            <span class="sequence">Sequência: 1, 11, 21, 1211, 111221, ?</span></label>
+                            <input type="number" required min="0">
+                        </div>
+                        <button type="submit">Verificar</button>
+                        <div class="digit-reveal hidden">
+                            <p>🎉 Correto! O quinto dígito do código é: <span class="digit">9</span></p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question-block">
+                    <form class="question-form" data-digit="6">
+                        <div class="question">
+                            <label>6. Se no alfabeto:<br>
+                            <span class="sequence">
+                            A = 2<br>
+                            B = 4<br>
+                            C = 6<br>
+                            ...<br>
+                            Z = 52</span>
+                            <span class="question-text">Com base neste padrão, qual é o valor da palavra LILIANA?</span></label>
+                            <input type="number" required min="0">
+                        </div>
+                        <button type="submit">Verificar</button>
+                        <div class="digit-reveal hidden">
+                            <p>🎉 Correto! O sexto dígito do código é: <span class="digit">3</span></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="enigma" class="hidden">
+            <button id="backFromEnigmaButton" class="back-button">← Voltar</button>
+            <h2>🎉 Parabéns! Último Desafio!</h2>
+            <p class="success-message">Uau! Acertaste todas as perguntas! Agora só falta um último passo para descobrires o teu presente...</p>
+            <div class="enigma-content">
+                <h3>🔍 Enigma Final:</h3>
+                <p class="enigma-verse">
+                    Num lugar onde, no ano passado, nao tinha vida,<br>
+                    Ouvi dizer que era o João Miguel com fadiga,<br>
+                    Uma chave espera, com um fio a brilhar,<br>
+                    Pronta para quem souber procurar.<br>
+                    <br>
+                    Com primos unidos, a busca é divertida,<br>
+                    A chave é o prémio, a alegria é garantida,<br>
+                    Então, olhem com calma, não deixem de olhar,<br>
+                    Na casa ao lado, a chave vai brilhar!
+                </p>
+                <p class="enigma-hint">
+                    <a href="https://maps.app.goo.gl/pz5RddA3MVdz24XB7" target="_blank" class="map-link">
+                        Clica aqui se quiseres uma dica! 📍
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div id="code-section" class="hidden">
+            <h2>🔒 Código do Enigma</h2>
+            <button id="backFromCodeButton" class="back-button">← Voltar</button>
+            <div class="lock-image">
+                <img src="img/lock.svg" alt="Cadeado" id="lockImg">
+            </div>
+            <form id="codeForm">
+                <div class="code-inputs">
+                    <input type="number" maxlength="1" class="code-digit" required>
+                    <input type="number" maxlength="1" class="code-digit" required>
+                    <input type="number" maxlength="1" class="code-digit" required>
+                    <input type="number" maxlength="1" class="code-digit" required>
+                    <input type="number" maxlength="1" class="code-digit" required>
+                    <input type="number" maxlength="1" class="code-digit" required>
+                </div>
+                <div id="codeErrorMessage" class="error-message hidden"></div>
+                <button type="submit">Verificar Código</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+/* Importar fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital@0;1&display=swap');
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e3f2fd 100%);
+    color: #2c3e50;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #c0392b;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: #34495e;
+    margin: 25px 0;
+}
+
+.special-message {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #2c3e50;
+    margin: 20px 0;
+    font-size: 1.3em;
+    line-height: 1.4;
+}
+
+.date-message {
+    font-weight: 600;
+    color: #e74c3c;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    padding: 10px;
+    background-color: rgba(231, 76, 60, 0.1);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+button {
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(145deg, #45a049, #4CAF50);
+}
+
+.question {
+    margin: 25px 0;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #34495e;
+    font-size: 1.1em;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.error-message {
+    background-color: #fff3f3;
+    color: #e74c3c;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 1em;
+    border-left: 4px solid #e74c3c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.christmas-image {
+    margin: 25px auto;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+#christmasImg {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#enigma p {
+    font-size: 1.1em;
+    margin: 15px 0;
+    color: #2c3e50;
+}
+
+#enigma strong {
+    color: #e74c3c;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .special-message {
+        font-size: 1.1em;
+    }
+
+    .date-message {
+        font-size: 1em;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input[type="text"], input[type="number"] {
+        font-size: 16px; /* Previne zoom em iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .special-message {
+        font-size: 1em;
+    }
+
+    .question label {
+        font-size: 1em;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.success-message {
+    color: #27ae60;
+    font-size: 1.2em;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(39, 174, 96, 0.1);
+    border-radius: 10px;
+}
+
+.enigma-content {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.enigma-content h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.enigma-content p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.enigma-hint {
+    color: #e74c3c;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.game-instructions {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-instructions h2 {
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-instructions h3 {
+    color: #2c3e50;
+    margin: 20px 0 15px 0;
+    font-size: 1.3em;
+}
+
+.intro-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+.how-it-works {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.steps-list {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.steps-list li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.steps-list li:before {
+    content: "🎯";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.final-step {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.good-luck {
+    font-size: 1.2em;
+    color: #e74c3c;
+    text-align: center;
+    margin: 25px 0;
+    font-weight: 600;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+    .game-instructions {
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .game-instructions h2 {
+        font-size: 1.5em;
+    }
+
+    .intro-text {
+        font-size: 1em;
+    }
+
+    .steps-list {
+        padding-left: 10px;
+    }
+
+    .good-luck {
+        font-size: 1.1em;
+    }
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.back-button {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    padding: 8px 15px;
+}
+
+.code-button {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+}
+
+.code-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.code-digit {
+    width: 50px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    -moz-appearance: textfield;
+}
+
+.code-digit::-webkit-outer-spin-button,
+.code-digit::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.lock-image {
+    margin: 30px auto;
+    max-width: 150px;
+}
+
+.lock-image img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .code-inputs {
+        gap: 5px;
+    }
+
+    .code-digit {
+        width: 40px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .back-button {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+
+.code-numbers {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.code-digit-reveal {
+    font-size: 2em;
+    letter-spacing: 10px;
+    margin: 10px 0;
+}
+
+.hint-text {
+    color: #2c3e50;
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+.return-button {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .code-digit-reveal {
+        font-size: 1.5em;
+        letter-spacing: 5px;
+    }
+}
+
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.question-block {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question-form button {
+    width: auto;
+    margin: 10px 0;
+}
+
+.digit-reveal {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.digit-reveal .digit {
+    font-size: 1.4em;
+    color: #1b5e20;
+    padding: 5px 10px;
+    background-color: #c8e6c9;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.question-block.answered {
+    border: 2px solid #4CAF50;
+}
+
+.question-block.answered input,
+.question-block.answered button {
+    display: none;
+}
+
+.error-reveal {
+    background-color: #ffebee;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    color: #c62828;
+    font-weight: 600;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.error-reveal p {
+    margin: 5px 0;
+}
+
+.error-hint {
+    font-size: 0.9em;
+    color: #d32f2f;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sequence {
+    display: block;
+    font-family: monospace;
+    font-size: 1.2em;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    color: #2c3e50;
+}
+
+.hint {
+    display: block;
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.question-text {
+    display: block;
+    margin-top: 15px;
+    color: #2c3e50;
+}
+
+.hint-message {
+    background-color: #fff8e1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    color: #f57f17;
+    font-weight: 600;
+    animation: fadeIn 0.3s ease-in;
+    border-left: 4px solid #ffd54f;
+}
+
+.hint-message p {
+    margin: 5px 0;
+}
+
+.hint-message p:first-child {
+    color: #f57f17;
+    font-size: 1.1em;
+}
+
+.fun-fact {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #e67e22;
+    font-style: italic;
+    background-color: #fff3e0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.map-link {
+    color: #e74c3c;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #fff3f3;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.map-link:hover {
+    background-color: #e74c3c;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.enigma-verse {
+    white-space: pre-line;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1.8;
+    margin: 25px 0;
+}
