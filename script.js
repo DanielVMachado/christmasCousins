@@ -103,7 +103,7 @@ document.querySelectorAll('.question-form').forEach(form => {
                 hintMessage.className = 'hint-message';
                 hintMessage.innerHTML = `
                     <p>💡 Dica:</p>
-                    <p>Esta é das perguntas mais difíceis, mas aposto que ao ler o último conjunto da sequência já disseste a resposta! 🤔💭</p>
+                    <p>Esta é das perguntas mais difíceis, se disseres cada conjunto de números iguais, já disseste a resposta! 🤔💭</p>
                 `;
                 this.appendChild(hintMessage);
             }
