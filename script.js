@@ -16,7 +16,7 @@ const correctAnswers = {
     3: "10", 
     4: "45", 
     5: "312211",
-    6: "84"
+    6: "2024"
 };
 
 function updateQuestionsState() {
@@ -104,17 +104,6 @@ document.querySelectorAll('.question-form').forEach(form => {
                 hintMessage.innerHTML = `
                     <p>💡 Dica:</p>
                     <p>Esta é das perguntas mais difíceis, mas aposto que ao ler o último conjunto da sequência já disseste a resposta! 🤔💭</p>
-                `;
-                this.appendChild(hintMessage);
-            }
-
-            if (questionNumber === "6") {
-                const hintMessage = document.createElement('div');
-                hintMessage.className = 'hint-message';
-                hintMessage.innerHTML = `
-                    <p>💡 Dica:</p>
-                    <p>Não se esqueçam que o "K" também é uma letra!</p>
-                    <p>Cada letra vale o seu número de posição × 2</p>
                 `;
                 this.appendChild(hintMessage);
             }
