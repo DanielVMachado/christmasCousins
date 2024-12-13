@@ -11,7 +11,7 @@ document.getElementById('startButton').addEventListener('click', function() {
 
 
 const correctAnswers = {
-    1: "cousins",
+    1: "8",
     2: "756",
     3: "10", 
     4: "45", 
@@ -51,16 +51,11 @@ document.querySelectorAll('.question-form').forEach(form => {
         event.preventDefault();
         const questionNumber = this.dataset.digit;
         const input = this.querySelector('input');
-        let answer = input.value.toLowerCase().trim();
-        let correctAnswer = correctAnswers[questionNumber].toLowerCase();
+        let answer = input.value;
+        let correctAnswer = correctAnswers[questionNumber];
         
         const previousMessages = this.querySelectorAll('.error-reveal, .hint-message');
         previousMessages.forEach(msg => msg.remove());
-        
-        if (questionNumber === "5" || questionNumber === "6") {
-            answer = input.value;
-            correctAnswer = correctAnswers[questionNumber];
-        }
         
         if (answer === correctAnswer) {
             this.querySelector('.digit-reveal').classList.remove('hidden');
@@ -83,7 +78,7 @@ document.querySelectorAll('.question-form').forEach(form => {
                 hintMessage.className = 'hint-message';
                 hintMessage.innerHTML = `
                     <p>💡 Dica:</p>
-                    <p>Não introduzas o emoji, apenas a palavra! 📝</p>
+                    <p>Olha bem para todos os cantos da foto... há um gorro escondido atrás! 🎅🔍</p>
                 `;
                 this.appendChild(hintMessage);
             }

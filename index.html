@@ -59,12 +59,12 @@
                 <h3>🎯 Hora do Desafio!</h3>
                 
                 <div class="quiz-instructions">
-
                     <ul class="quiz-steps">
                         <li>🔍 As perguntas estão bloqueadas - resolvam uma de cada vez</li>
-                        <li>📝 Anotem cada número revelado, vão precisar deles no final!</li>
+                        <li>📝 Cada resposta correta revela um número importante</li>
+                        <li>🔢 Anotem os números na ordem que aparecem - eles formam o código final!</li>
+                        <li>🎯 No final, usem o botão "Inserir Código Final" para descobrir a próxima pista</li>
                     </ul>
-
                 </div>
                 
                 <p class="quiz-start">Juntaste os primos? Então vamos começar esta aventura! 🚀</p>
@@ -74,8 +74,11 @@
                 <div class="question-block">
                     <form class="question-form" data-digit="1">
                         <div class="question">
-                            <label>1. Qual é o nome do nosso grupo de primos no WhatsApp?</label>
-                            <input type="text" required>
+                            <label>1. Na página inicial estava uma fotografia nossa do ano passado. Quantas pessoas têm gorro de natal na cabeça?</label>
+                            <input type="number" 
+                                   inputmode="numeric" 
+                                   pattern="[0-9]*"
+                                   required min="0">
                         </div>
                         <button type="submit">Verificar</button>
                         <div class="digit-reveal hidden">
