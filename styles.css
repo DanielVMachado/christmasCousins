@@ -654,27 +654,64 @@ html {
 /* Adicionar estilos para a introdução do quiz */
 .quiz-intro {
     background-color: var(--christmas-green-light);
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     margin: 20px 0;
     border-left: 4px solid var(--christmas-green);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.quiz-intro p {
-    margin: 0;
+.quiz-intro h3 {
+    color: var(--christmas-green);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.quiz-instructions {
+    margin: 15px 0;
+}
+
+.quiz-instructions > p {
     font-size: 1.1em;
-    color: #2c3e50;
-    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.quiz-steps {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.quiz-steps li {
+    margin: 12px 0;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    font-size: 1.05em;
+    color: var(--text-dark);
+}
+
+.quiz-start {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--christmas-green);
+    font-weight: 600;
+    margin: 20px 0 10px 0;
 }
 
 @media (max-width: 768px) {
     .quiz-intro {
-        padding: 15px;
-        margin: 15px 0;
+        padding: 20px;
     }
     
-    .quiz-intro p {
+    .quiz-steps li {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+    
+    .quiz-tip p {
         font-size: 1em;
     }
 }
@@ -684,4 +721,54 @@ html {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid var(--christmas-red-light);
+}
+
+.challenge-preview {
+    background-color: var(--christmas-green-light);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.challenge-preview h3 {
+    color: var(--christmas-green);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.preview-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.preview-list li {
+    margin: 12px 0;
+    font-size: 1.1em;
+    color: var(--text-dark);
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+}
+
+.team-message {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: var(--christmas-red-light);
+    border-radius: 10px;
+}
+
+.team-message p {
+    margin: 8px 0;
+    font-size: 1.1em;
+    color: var(--christmas-red);
+}
+
+.start-message {
+    font-size: 1.2em;
+    color: var(--christmas-green);
+    font-weight: 600;
+    margin: 25px 0;
+    text-align: center;
 }

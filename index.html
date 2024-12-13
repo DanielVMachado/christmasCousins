@@ -13,39 +13,40 @@
             <h1>🎄 Feliz Natal! 🎁</h1>
             <p class="special-message">Que este Natal seja tão especial quanto os momentos que passamos juntos!</p>
             <p class="date-message">Almoço de primos: Domingo, 15 de Dezembro de 2024</p>
+            
             <div class="christmas-image">
                 <img src="img/primos.JPG" alt="Feliz Natal" id="christmasImg">
             </div>
+            
             <div class="game-instructions">
-                <h2>Bem-vinda ao teu desafio! 🎁🔐</h2>
+                <h2>Bem-vinda ao teu desafio! 🎁</h2>
                 
-                <p class="intro-text">Já tiraste o embrulho do presente? Se ainda não, tira-o agora!</p>
-                
-                <p class="intro-text">Se já o viste, percebes que ainda não tens acesso a ele. Então, para que possas abrir o teu presente, precisarás de resolver um pequeno desafio.</p>
-                <p class="intro-text">Podes e deves pedir ajuda dos primos, será mais divertido!</p>
+                <div class="intro-text">
+                    <p>Pronta para começar a aventura, Lili? 🎯</p>
+                    <p>Junta os primos e vamos descobrir onde está a chave do teu presente!</p>
+                </div>
 
-                <div class="how-it-works">
-                    <h3>Como funciona?</h3>
-                    <p>O desafio é composto por 6 perguntas.</p>
-                    <p>Cada resposta correta irá revelar um dígito do código do enigma final.</p>
-                    
-                    <ul class="steps-list">
-                        <li>Pergunta 1: Dá o 1º dígito do código.</li>
-                        <li>Pergunta 2: Dá o 2º dígito do código.</li>
-                        <li>E assim por diante!</li>
+                <div class="challenge-preview">
+                    <h3>O que te espera? 🤔</h3>
+                    <ul class="preview-list">
+                        <li>6 perguntas divertidas sobre os primos</li>
+                        <li>Cada resposta correta revela um número especial</li>
+                        <li>Um enigma final que te levará até à chave!</li>
                     </ul>
                     
-                    <p>Assim que todas as perguntas forem respondidas corretamente e o código do enigma estiver completo, insire-o clicando no botão "Inserir Código Final".</p>
+                    <div class="team-message">
+                        <p>👥 Trabalhem em equipa!</p>
+                        <p>🤣 Riam muito!</p>
+                        <p>🎯 Descubram juntos!</p>
+                    </div>
                 </div>
                 
-                <p class="final-step"><strong>O Enigma Final será revelado!</strong><br>
-                Agora, basta pensar, explorar e descobrir onde está escondida a chave que abre o cadeado do presente.</p>
+                <p class="start-message">Preparada para esta aventura em família? 🚀</p>
                 
-                <p class="good-luck">Boa sorte! 🕵️‍♂️🔑</p>
-            </div>
-            <div class="button-group">
-                <button id="startButton">Começar o Desafio</button>
-                <button id="codeButton" class="code-button">Inserir Código Final</button>
+                <div class="button-group">
+                    <button id="startButton">Começar o Desafio</button>
+                    <button id="codeButton" class="code-button">Inserir Código Final</button>
+                </div>
             </div>
         </div>
         
@@ -55,9 +56,18 @@
             <div id="errorMessage" class="error-message hidden"></div>
             
             <div class="quiz-intro">
-                <p>Terás de responder às 6 questões acertadamente para desbloquear o enigma final. Depois, aponta o código e vai à pagina do enigma final ao clicar no botão de "Inserir Código Final" no final da página. 🎯</p>
-                <p>As perguntas serão desbloqueadas quando acertares na pergunta anterior!</p>
-                <p>Juntaste os primos? Vamos a isso!</p>
+                <h3>🎯 Hora do Desafio!</h3>
+                
+                <div class="quiz-instructions">
+
+                    <ul class="quiz-steps">
+                        <li>🔍 As perguntas estão bloqueadas - resolvam uma de cada vez</li>
+                        <li>📝 Anotem cada número revelado, vão precisar deles no final!</li>
+                    </ul>
+
+                </div>
+                
+                <p class="quiz-start">Juntaste os primos? Então vamos começar esta aventura! 🚀</p>
             </div>
             
             <div class="questions-container">
@@ -77,7 +87,7 @@
                 <div class="question-block">
                     <form class="question-form" data-digit="2">
                         <div class="question">
-                            <label>2. Qual é o resultado do número de porta de casa do almoço deste ano mais o numero de porta de casa do almoço do ano passado?</label>
+                            <label>2. Qual é o resultado do número de porta de casa do almoço de Natal deste ano mais o número de porta de casa do almoço de Natal do ano passado?</label>
                             <input type="number" 
                                    inputmode="numeric" 
                                    pattern="[0-9]*"
